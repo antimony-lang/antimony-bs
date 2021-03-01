@@ -1,0 +1,45 @@
+struct Position {
+    line: int
+    offset: int
+    raw: int
+}
+
+struct Cursor {
+    pos: Position
+    len: int
+    chars: string
+    prev: string
+
+    fn bump(): string {
+        let current_pos = self.pos.raw
+
+        let c = self.chars[current_pos]
+
+        // TODO: This is a bug in the compiler
+        // self.pos.raw = self.pos.raw + 1
+        // self.pos.offset += 1
+        
+        if c == "\n" {
+            // self.pos.line += 1
+            // self.pos.offset = 0
+        }
+
+        return c
+    }
+}
+
+fn cursor_new(input: string) {
+
+    let pos = new Position {
+        line: 0
+        offset: 0
+        raw: 0
+    }
+
+    return new Cursor {
+        pos: pos
+        len: len(input)
+        chars: input
+        prev: ""
+    }
+}

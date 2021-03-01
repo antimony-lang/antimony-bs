@@ -1,0 +1,5 @@
+import "lexer"
+
+fn main() {
+    tokenize()
+}

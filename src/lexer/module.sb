@@ -1,0 +1,16 @@
+import "cursor"
+
+struct Token {
+    raw: string
+}
+
+fn tokenize() {
+    let input = "hello world"
+
+    let cursor = cursor_new(input)
+    
+    println(cursor.bump())
+    println(cursor.bump())
+    println(cursor.bump())
+    println(cursor.bump())
+}
