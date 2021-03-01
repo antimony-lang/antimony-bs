@@ -15,13 +15,14 @@ struct Cursor {
 
         let c = self.chars[current_pos]
 
-        // TODO: This is a bug in the compiler
-        // self.pos.raw = self.pos.raw + 1
-        // self.pos.offset += 1
+        // TODO: This is a bug in the compiler. Exchange with `self` once fixed
+        // See: https://github.com/antimony-lang/antimony/issues/34
+        this.pos.raw += 1
+        this.pos.offset += 1
         
         if c == "\n" {
-            // self.pos.line += 1
-            // self.pos.offset = 0
+            this.pos.line += 1
+            this.pos.offset = 0
         }
 
         return c

@@ -13,4 +13,5 @@ fn tokenize() {
     println(cursor.bump())
     println(cursor.bump())
     println(cursor.bump())
+    println(cursor.bump())
 }
